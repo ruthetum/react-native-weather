@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
-import { Ionicons } from '@expo/vector-icons';
+//import { Ionicons } from '@expo/vector-icons';
+import { MaterialComunityIcons } from '@expo/vector-icons';
 import PropTypes from "prop-types";
 
 const weatherCases = {
@@ -9,49 +10,57 @@ const weatherCases = {
     colors:["#00C6FB", "#005BEA"],
     title: "Raining",
     subtitle: "For more info look outside",
-    icon:"ios-rainy"
+    // icon:"ios-rainy"
+    icon:"weather-rainy"
   },
   Clear : {
     colors:["#FEF253", "#FF7300"],
     title: "Sunny",
     subtitle: "Go get outside",
-    icon:"ios-sunny"
+    // icon:"ios-sunny"
+    icon:"weather-sunny"
   },
   Thunderstorm : {
     colors:["#00ECBC", "#007ADF"],
     title: "Thunderstorm",
     subtitle: "Actually, outside of the house",
-    icon:"ios-thunderstorm"
+    // icon:"ios-thunderstorm"
+    icon:"weather-lightning"
   },
   Clouds : {
     colors:["#D7D2CC", "#304352"],
     title: "Clouds",
     subtitle: "It is boring",
-    icon:"ios-clouds"
+    // icon:"ios-clouds"
+    icon:"weather-cloudy"
   },
   Snow : {
     colors:["#7DE2FC", "#89B6E5"],
     title: "Snowing",
     subtitle: "Do you want to build a snowman?",
-    icon:"ios-snow"
+    // icon:"ios-snow"
+    icon:"weather-snowy"
   },
   Drizzle : {
     colors:["#89F7FE", "#66A6FF"],
     title: "Drizzle",
     subtitle: "Do you like rain?",
-    icon:"ios-rainy-outline"
+    // icon:"ios-rainy-outline"
+    icon:"weather-hail"
   },
   Haze : {
     colors:["#89F7FE", "#66A6FF"],
     title: "Haze",
     subtitle: "Heurim Heurim",
-    icon:"ios-rainy-outline"
+    // icon:"ios-rainy-outline"
+    icon:"weather-windy"
   },
   Mist : {
     colors:["#00ECBC", "#007ADF"],
     title: "Mist",
     subtitle: "Mistic",
-    icon:"ios-rainy-outline"
+    // icon:"ios-rainy-outline"
+    icon:"weather-fog"
   },
 }
 
@@ -64,7 +73,11 @@ function Weather({ weatherName, temp }) {
         style={styles.container}>
         
         <View style={styles.upper}>
-            <Ionicons name={weatherCases[weatherName].icon} size={140} color="white" />
+            {/* <Ionicons  */}
+            <MaterialComunityIcons
+              name={weatherCases[weatherName].icon}
+              size={140}
+              color="white" />
             <Text style={styles.temp}>{temp}˚</Text>
         </View>
 
