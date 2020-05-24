@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 // 컴포넌트를 사용할 때는 import 시켜야함
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import Weather from "./Weather";
 
 export default class App extends Component {
@@ -11,6 +11,7 @@ export default class App extends Component {
     const { isLoaded } = this.state;
     return (
       <View style={styles.container}>
+        <StatusBar hidden={true} />
         {isLoaded ? (
           <Weather />
         ) : (
